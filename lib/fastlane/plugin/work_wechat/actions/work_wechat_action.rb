@@ -33,7 +33,7 @@ module Fastlane
 
       def self.text_http_body(params)
         content = params[:text_content]
-        mentioned_list = params[:mentioned_list]
+        text_mentioned_list = params[:text_mentioned_list]
         mentioned_mobile_list = params[:mentioned_mobile_list]
 
         body = {}
@@ -50,8 +50,8 @@ module Fastlane
         # }
 
         text = { 'content' => content }
-        text['mentioned_list'] = mentioned_list if mentioned_list
-        text['mentioned_mobile_list'] = mentioned_mobile_list if mentioned_mobile_list
+        text['text_mentioned_list'] = text_mentioned_list if text_mentioned_list
+        text['text_mentioned_mobile_list'] = text_mentioned_mobile_list if text_mentioned_mobile_list
         body['text'] = text
         body.to_json
       end
